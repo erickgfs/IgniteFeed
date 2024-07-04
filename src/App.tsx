@@ -1,11 +1,11 @@
-import { Header } from './components/Header/Header';
-import { Sidebar } from './components/Sidebar/Sidebar';
-import { Post } from './components/Post/Post';
+import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar';
+import { Post, PostType } from './components/Post';
 
 import './styles/global.scss';
 import styles from './styles/App.module.scss';
 
-const posts = [
+const posts: PostType[] = [
   {
     id: 1,
     author: {
@@ -47,7 +47,7 @@ export function App() {
         <Sidebar />
         <main>
           {posts.map((post)=> {
-            return <Post key={post.id} author={post.author} content={post.content} publishedAt={post.publishedAt}/>
+            return <Post key={post.id} post={post}/>
           })}
         </main>
       </div>
